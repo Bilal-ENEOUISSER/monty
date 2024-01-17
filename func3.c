@@ -1,16 +1,16 @@
 #include "monty.h"
 /**
- * addnode - add node to the head stack
- * @head: head of the stack
+ * addnode_ - add node to the h stack
+ * @h: h of the stack
  * @n: new_value
  * Return: no return
 */
-void addnode(stack_t **head, int n)
+void addnode_(stack_t **h, int n)
 {
 
 	stack_t *new_node, *aux;
 
-	aux = *head;
+	aux = *h;
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{ printf("Error\n");
@@ -18,22 +18,22 @@ void addnode(stack_t **head, int n)
 	if (aux)
 		aux->prev = new_node;
 	new_node->n = n;
-	new_node->next = *head;
+	new_node->next = *h;
 	new_node->prev = NULL;
-	*head = new_node;
+	*h = new_node;
 }
 
 
 
 /**
-* execute - executes the opcode
-* @stack: head linked list - stack
+* execute_ - executes the opcode
+* @stack: h linked list - stack
 * @counter: line_counter
 * @file: poiner to monty file
 * @content: line content
 * Return: no return
 */
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int execute_(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
 				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
@@ -81,48 +81,48 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 
 
 /**
-* free_stack - frees a doubly linked list
-* @head: head of the stack
+* free_stack_ - frees a doubly linked list
+* @h: h of the stack
 */
-void free_stack(stack_t *head)
+void free_stack_(stack_t *h)
 {
 	stack_t *aux;
 
-	aux = head;
-	while (head)
+	aux = h;
+	while (h)
 	{
-		aux = head->next;
-		free(head);
-		head = aux;
+		aux = h->next;
+		free(h);
+		h = aux;
 	}
 }
 
 
 
 /**
- * f_queue - prints the top
- * @head: stack head
+ * queue_ - prints the top
+ * @h: stack h
  * @counter: line_number
  * Return: no return
 */
-void f_queue(stack_t **head, unsigned int counter)
+void f_queue_(stack_t **h, unsigned int counter)
 {
-	(void)head;
+	(void)h;
 	(void)counter;
 	bus.lifi = 1;
 }
 
 /**
- * addqueue - add node to the tail stack
+ * addqueue_ - add node to the tail stack
  * @n: new_value
- * @head: head of the stack
+ * @h: h of the stack
  * Return: no return
 */
-void addqueue(stack_t **head, int n)
+void addqueue_(stack_t **h, int n)
 {
 	stack_t *new_node, *aux;
 
-	aux = *head;
+	aux = *h;
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
@@ -137,7 +137,7 @@ void addqueue(stack_t **head, int n)
 	}
 	if (!aux)
 	{
-		*head = new_node;
+		*h = new_node;
 		new_node->prev = NULL;
 	}
 	else
@@ -150,14 +150,14 @@ void addqueue(stack_t **head, int n)
 
 
 /**
- * f_stack - prints the top
- * @head: stack head
+ * stack_ - prints the top
+ * @h: stack h
  * @counter: line_number
  * Return: no return
 */
-void f_stack(stack_t **head, unsigned int counter)
+void stack_(stack_t **h, unsigned int counter)
 {
-	(void)head;
+	(void)h;
 	(void)counter;
 	bus.lifi = 0;
 }
