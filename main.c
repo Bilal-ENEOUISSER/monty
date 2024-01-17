@@ -7,7 +7,15 @@
 */
 int main(int argc, char *argv[])
 {
-	bus_t bus = {NULL, NULL, NULL, 0};
+	 bus_t *bus = malloc(sizeof(bus_t));
+    if (bus == NULL) {
+        fprintf(stderr, "Error: Unable to allocate memory for bus\n");
+        exit(EXIT_FAILURE);
+    }
+    bus->arg = NULL;
+    bus->file = NULL;
+    bus->content = NULL;
+    bus->lifi = 0;
 
 	char *content;
 	FILE *file;
