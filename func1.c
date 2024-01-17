@@ -65,7 +65,7 @@ void pall_(stack_t **h, unsigned int counter)
 
 /**
  * pint_ - prints the top
- * @s: stack s
+ * @h: stack h
  * @counter: line_number
  * Return: no return
 */
@@ -84,7 +84,7 @@ void pint_(stack_t **h, unsigned int counter)
 
 /**
  * pop_ - prints the top
- * @s: stack s
+ * @h: stack h
  * @counter: line_number
  * Return: no return
 */
