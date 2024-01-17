@@ -62,7 +62,7 @@ extern bus_t bus;
 stack_t *global_stack;
 
 /* opcodes */
-void (*get_op(char *tok1))(stack_t **stack, unsigned int line_number);
+get_op(char *content, stack_t **stack, unsigned int counter, FILE *file);
 void push(stack_t **stack, unsigned int line_number, const char *n);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
