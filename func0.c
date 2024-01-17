@@ -68,7 +68,7 @@ void sub_(stack_t **h, unsigned int counter)
 */
 void mul_(stack_t **h, unsigned int counter)
 {
-	stack_t *h;
+	stack_t *s;
 	int len = 0, aux;
 
 	s = *h;
@@ -100,7 +100,7 @@ void mul_(stack_t **h, unsigned int counter)
 */
 void div_(stack_t **h, unsigned int counter)
 {
-	stack_t *h;
+	stack_t *s;
 	int len = 0, aux;
 
 	s = *h;
@@ -141,7 +141,7 @@ void div_(stack_t **h, unsigned int counter)
 */
 void mod_(stack_t **h, unsigned int counter)
 {
-	stack_t *h;
+	stack_t *s;
 	int len = 0, aux;
 
 	s = *h;
