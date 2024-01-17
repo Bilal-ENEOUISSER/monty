@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	{
 		if (ispush == 1)
 		{
-			push(&h, line);
+			push(&h, line, token);
 			ispush = 0;
 			token = strtok(NULL, "\n\t\a\r ;:");
 			line++;
