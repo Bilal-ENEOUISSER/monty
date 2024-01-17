@@ -70,4 +70,9 @@ void del_end_node(stack_t **h);
 void free_dlist(stack_t **h);
 int is_number(const char *n);
 
+int open_file(const char *filename);
+char *read_file(int fd);
+void tokenize(char *buffer, stack_t **h);
+void free_resources(int fd, char *buffer, stack_t **h);
+
 #endif /* MONTY_H */
