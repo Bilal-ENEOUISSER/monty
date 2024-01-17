@@ -8,15 +8,17 @@
  */
 int main(int argc, char *argv[])
 {
+	int fd;
+	char *buffer;
+	stack_t *h = NULL;
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	int fd = open_file(argv[1]);
-	char *buffer = read_file(fd);
-	stack_t *h = NULL;
-
+	fd = open_file(argv[1]);
+	buffer = read_file(fd);
 	tokenize(buffer, &h);
 	free_resources(fd, buffer, &h);
 	return (0);
@@ -48,10 +50,11 @@ int open_file(const char *filename)
 char *read_file(int fd)
 {
 	char *buffer = malloc(sizeof(char) * 10000);
+	ssize_t n_read;
 
 	if (!buffer)
 		exit(EXIT_FAILURE);
-	ssize_t n_read = read(fd, buffer, 10000);
+	n_read = read(fd, buffer, 10000);
 
 	if (n_read == -1)
 	{
