@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * push_ - add node to the stack
- * @h: stack h
+ * @s: stack s
  * @counter: line_number
  * Return: no return
 */
@@ -31,14 +31,14 @@ void push_(stack_t **h, unsigned int counter)
 		exit(EXIT_FAILURE); }
 	n = atoi(bus.arg);
 	if (bus.lifi == 0)
-		addnode_(h, n);
+		addnode_(s, n);
 	else
-		addqueue(h, n);
+		addqueue(s, n);
 }
 
 /**
  * pall_ - prints the stack
- * @h: stack h
+ * @s: stack s
  * @counter: no used
  * Return: no return
 */
@@ -47,19 +47,19 @@ void pall_(stack_t **h, unsigned int counter)
 	stack_t *h;
 	(void)counter;
 
-	h = *h;
-	if (h == NULL)
+	s = *h;
+	if (s == NULL)
 		return;
-	while (h)
+	while (s)
 	{
-		printf("%d\n", h->n);
+		printf("%d\n", s->n);
 		h = h->next;
 	}
 }
 
 /**
  * pint_ - prints the top
- * @h: stack h
+ * @s: stack s
  * @counter: line_number
  * Return: no return
 */
@@ -78,7 +78,7 @@ void pint_(stack_t **h, unsigned int counter)
 
 /**
  * pop_ - prints the top
- * @h: stack h
+ * @s: stack s
  * @counter: line_number
  * Return: no return
 */
@@ -94,9 +94,9 @@ void pop_(stack_t **h, unsigned int counter)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	h = *h;
-	*h = h->next;
-	free(h);
+	s = *h;
+	*h = s->next;
+	free(s);
 }
 
 /**
@@ -110,10 +110,10 @@ void swap_(stack_t **h, unsigned int counter)
 	stack_t *h;
 	int len = 0, aux;
 
-	h = *h;
-	while (h)
+	s = *h;
+	while (s)
 	{
-		h = h->next;
+		s = s->next;
 		len++;
 	}
 	if (len < 2)
@@ -124,8 +124,8 @@ void swap_(stack_t **h, unsigned int counter)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	h = *h;
-	aux = h->n;
-	h->n = h->next->n;
-	h->next->n = aux;
+	s = *h;
+	aux = s->n;
+	s->n = s->next->n;
+	s->next->n = aux;
 }
