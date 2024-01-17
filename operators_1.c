@@ -76,7 +76,7 @@ void pop(stack_t **h, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	else
-		delete_end_node(h);
+		del_end_node(h);
 }
 
 /**
