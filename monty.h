@@ -72,7 +72,7 @@ void pstr_(stack_t **head, unsigned int counter);
 void rotl_(stack_t **head, unsigned int counter);
 void rotr_(stack_t **head, __attribute__((unused)) unsigned int counter);
 void addnode_(stack_t **head, int n);
-void addqueue_(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
 void queue_(stack_t **head, unsigned int counter);
 void stack_(stack_t **head, unsigned int counter);
 
