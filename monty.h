@@ -1,5 +1,13 @@
 #ifndef MONTY_H
 #define MONTY_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <ctype.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -31,19 +39,34 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+
 /* Global stack variable */
 stack_t *global_stack;
 
+/* opcodes */
+void (*get_op_func(char *token1))(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
-void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
-void sub(stack_t **stack, unsigned int line_number);
-void div(stack_t **stack, unsigned int line_number);
-void mul(stack_t **stack, unsigned int line_number);
-void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **h, unsigned int line_number);
+void pstr(stack_t **h, unsigned int line_number);
+void rotl(stack_t **h, unsigned int line_number);
+void rotr(stack_t **h, unsigned int line_number);
+
+/* operators */
+void add_(stack_t **stack, unsigned int line_number);
+void sub_(stack_t **stack, unsigned int line_number);
+void div_(stack_t **stack, unsigned int line_number);
+void mul_(stack_t **stack, unsigned int line_number);
+void mod_(stack_t **stack, unsigned int line_number);
+
+/* doubly linked list */
+int add_end_node(stack_t **h, int n);
+void delete_end_node(stack_t **h);
+void free_dlist(stack_t **h);
 
 #endif /* MONTY_H */
