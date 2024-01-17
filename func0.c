@@ -40,12 +40,12 @@ void add_(stack_t **h, unsigned int counter)
 void sub_(stack_t **h, unsigned int counter)
 {
 	stack_t *aux;
-	int sus, nodes;
+	int sus, n;
 
 	aux = *h;
-	for (nodes = 0; aux != NULL; nodes++)
+	for (n = 0; aux != NULL; n++)
 		aux = aux->next;
-	if (nodes < 2)
+	if (n < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", counter);
 		fclose(bus.file);
