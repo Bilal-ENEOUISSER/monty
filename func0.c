@@ -71,10 +71,10 @@ void mul_(stack_t **h, unsigned int counter)
 	stack_t *h;
 	int len = 0, aux;
 
-	h = *h;
-	while (h)
+	s = *h;
+	while (s)
 	{
-		h = h->next;
+		s = s->next;
 		len++;
 	}
 	if (len < 2)
@@ -85,11 +85,11 @@ void mul_(stack_t **h, unsigned int counter)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	h = *h;
-	aux = h->next->n * h->n;
-	h->next->n = aux;
-	*h = h->next;
-	free(h);
+	s = *h;
+	aux = s->next->n * s->n;
+	s->next->n = aux;
+	*h = s->next;
+	free(s);
 }
 
 /**
@@ -103,10 +103,10 @@ void div_(stack_t **h, unsigned int counter)
 	stack_t *h;
 	int len = 0, aux;
 
-	h = *h;
-	while (h)
+	s = *h;
+	while (s)
 	{
-		h = h->next;
+		s = s->next;
 		len++;
 	}
 	if (len < 2)
@@ -117,8 +117,8 @@ void div_(stack_t **h, unsigned int counter)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	h = *h;
-	if (h->n == 0)
+	s = *h;
+	if (s->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", counter);
 		fclose(bus.file);
@@ -126,10 +126,10 @@ void div_(stack_t **h, unsigned int counter)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	aux = h->next->n / h->n;
-	h->next->n = aux;
-	*h = h->next;
-	free(h);
+	aux = s->next->n / s->n;
+	s->next->n = aux;
+	*h = s->next;
+	free(s);
 }
 
 /**
@@ -144,10 +144,10 @@ void mod_(stack_t **h, unsigned int counter)
 	stack_t *h;
 	int len = 0, aux;
 
-	h = *h;
+	s = *h;
 	while (h)
 	{
-		h = h->next;
+		s = s->next;
 		len++;
 	}
 	if (len < 2)
@@ -158,8 +158,8 @@ void mod_(stack_t **h, unsigned int counter)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	h = *h;
-	if (h->n == 0)
+	s = *h;
+	if (s->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", counter);
 		fclose(bus.file);
@@ -167,8 +167,8 @@ void mod_(stack_t **h, unsigned int counter)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	aux = h->next->n % h->n;
-	h->next->n = aux;
-	*h = h->next;
+	aux = s->next->n % s->n;
+	s->next->n = aux;
+	*h = s->next;
 	free(h);
 }
