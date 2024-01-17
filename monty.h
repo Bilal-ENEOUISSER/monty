@@ -68,6 +68,6 @@ void mod_(stack_t **stack, unsigned int line_number);
 int add_end_node(stack_t **h, int n);
 void del_end_node(stack_t **h);
 void free_dlist(stack_t **h);
-int is_number(const char *n)
+int is_number(const char *n);
 
 #endif /* MONTY_H */

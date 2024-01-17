@@ -31,8 +31,6 @@ int add_end_node(stack_t **h, int n)
 
 	if (!h)
 		return (-1);
-
-	/* malloc and set new node data */
 	new = malloc(sizeof(struct stack_s));
 	if (!new)
 	{
@@ -40,15 +38,13 @@ int add_end_node(stack_t **h, int n)
 		return (-1);
 	}
 	new->n = n;
-
-	/* account for empty linked list */
 	if (*h == NULL)
 	{
 		*h = new;
 		new->next = NULL;
 		new->prev = NULL;
 	}
-	else /* insert to front */
+	else
 	{
 		new->next = *h;
 		(*h)->prev = new;
@@ -65,14 +61,13 @@ void del_end_node(stack_t **h)
 {
 	stack_t *del = NULL;
 
-	/* account for only one node in list */
 	del = *h;
 	if ((*h)->next == NULL)
 	{
 		*h = NULL;
 		free(del);
 	}
-	else /* else delete front, and link correctly */
+	else
 	{
 		*h = (*h)->next;
 		(*h)->prev = NULL;
@@ -86,10 +81,8 @@ void del_end_node(stack_t **h)
  */
 void free_dlist(stack_t **h)
 {
-	/* return if empty list */
 	if (!h)
 		return;
-
 	while (*h && (*h)->next)
 	{
 		*h = (*h)->next;
