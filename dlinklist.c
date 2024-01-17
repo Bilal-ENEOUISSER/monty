@@ -7,13 +7,13 @@
  */
 int is_number(const char *n)
 {
-	int i = 0;
+	int k = 0;
 
 	if (*n == '-')
-		i = 1;
-	for (; *(n + i) != '\0'; i++)
+		k = 1;
+	for (; *(n + k) != '\0'; k++)
 	{
-		if (isdigit(*(n + i)) == 0)
+		if (isdigit(*(n + k)) == 0)
 			return (-1);
 	}
 	return (0);
@@ -58,10 +58,10 @@ int add_end_node(stack_t **h, int n)
 }
 
 /**
- * delete_end_node - deletes node at end of doubly linked list
+ * del_end_node - deletes node at end of doubly linked list
  * @h: pointer to head of doubly linked list
  */
-void delete_end_node(stack_t **h)
+void del_end_node(stack_t **h)
 {
 	stack_t *del = NULL;
 
