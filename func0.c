@@ -145,7 +145,7 @@ void mod_(stack_t **h, unsigned int counter)
 	int len = 0, aux;
 
 	s = *h;
-	while (h)
+	while (s)
 	{
 		s = s->next;
 		len++;
@@ -170,5 +170,5 @@ void mod_(stack_t **h, unsigned int counter)
 	aux = s->next->n % s->n;
 	s->next->n = aux;
 	*h = s->next;
-	free(h);
+	free(s);
 }
