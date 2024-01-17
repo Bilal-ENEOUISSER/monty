@@ -88,12 +88,12 @@ void free_stack_(stack_t *h)
 {
 	stack_t *aux;
 
-	aux = h;
-	while (h)
+	aux = s;
+	while (s)
 	{
-		aux = h->next;
-		free(h);
-		h = aux;
+		aux = s->next;
+		free(s);
+		s = aux;
 	}
 }
 
@@ -107,7 +107,7 @@ void free_stack_(stack_t *h)
 */
 void queue_(stack_t **h, unsigned int counter)
 {
-	(void)h;
+	(void)s;
 	(void)counter;
 	bus.lifi = 1;
 }
@@ -157,7 +157,7 @@ void addqueue_(stack_t **h, int n)
 */
 void stack_(stack_t **h, unsigned int counter)
 {
-	(void)h;
+	(void)s;
 	(void)counter;
 	bus.lifi = 0;
 }
