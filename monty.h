@@ -58,7 +58,7 @@ void push_(stack_t **head, unsigned int number);
 void pall_(stack_t **head, unsigned int number);
 void pint_(stack_t **head, unsigned int number);
 int execute_(char *content, stack_t **head, unsigned int counter, FILE *file);
-void free_stack_(stack_t *head);
+void free_stack(stack_t *head);
 void pop_(stack_t **head, unsigned int counter);
 void swap_(stack_t **head, unsigned int counter);
 void add_(stack_t **head, unsigned int counter);
