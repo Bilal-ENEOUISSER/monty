@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * push_ - add node to the stack
- * @s: stack s
+ * @h: stack h
  * @counter: line_number
  * Return: no return
 */
@@ -31,9 +31,9 @@ void push_(stack_t **h, unsigned int counter)
 		exit(EXIT_FAILURE); }
 	n = atoi(bus.arg);
 	if (bus.lifi == 0)
-		addnode_(s, n);
+		addnode_(h, n);
 	else
-		addqueue_(s, n);
+		addqueue_(h, n);
 }
 
 /**
@@ -44,7 +44,7 @@ void push_(stack_t **h, unsigned int counter)
 */
 void pall_(stack_t **h, unsigned int counter)
 {
-	stack_t *h;
+	stack_t *s;
 	(void)counter;
 
 	s = *h;
@@ -84,7 +84,7 @@ void pint_(stack_t **h, unsigned int counter)
 */
 void pop_(stack_t **h, unsigned int counter)
 {
-	stack_t *h;
+	stack_t *s;
 
 	if (*h == NULL)
 	{
@@ -107,7 +107,7 @@ void pop_(stack_t **h, unsigned int counter)
 */
 void swap_(stack_t **h, unsigned int counter)
 {
-	stack_t *h;
+	stack_t *s;
 	int len = 0, aux;
 
 	s = *h;
