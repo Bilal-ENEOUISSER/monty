@@ -8,7 +8,7 @@
 void nop_(stack_t **h, unsigned int counter)
 {
 	(void) counter;
-	(void) s;
+	(void) h;
 }
 
 /**
