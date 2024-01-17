@@ -72,7 +72,7 @@ int execute_(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
-		free_stack_(*stack);
+		free_stack(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);
 }
@@ -81,10 +81,10 @@ int execute_(char *content, stack_t **stack, unsigned int counter, FILE *file)
 
 
 /**
-* free_stack_ - frees a doubly linked list
+* free_stack - frees a doubly linked list
 * @h: h of the stack
 */
-void free_stack_(stack_t *h)
+void free_stack(stack_t *h)
 {
 	stack_t *aux;
 
