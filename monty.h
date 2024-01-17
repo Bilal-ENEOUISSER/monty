@@ -66,7 +66,7 @@ void mod_(stack_t **stack, unsigned int line_number);
 
 /* doubly linked list */
 int add_end_node(stack_t **h, int n);
-void delete_end_node(stack_t **h);
+void del_end_node(stack_t **h);
 void free_dlist(stack_t **h);
 
 #endif /* MONTY_H */
