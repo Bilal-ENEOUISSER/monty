@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	{
 		if (ispush == 1)
 		{
-			push(&h, line, token);
+			push(&h, line);
 			ispush = 0;
 			token = strtok(NULL, "\n\t\a\r ;:");
 			line++;
@@ -54,9 +54,9 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			if (get_op_func(token) != 0)
+			if (get_op(token) != 0)
 			{
-				get_op_func(token)(&h, line);
+				get_op(token)(&h, line);
 			}
 			else
 			{
