@@ -38,7 +38,7 @@ void push_(stack_t **h, unsigned int counter)
 
 /**
  * pall_ - prints the stack
- * @s: stack s
+ * @h: stack h
  * @counter: no used
  * Return: no return
 */
@@ -53,7 +53,7 @@ void pall_(stack_t **h, unsigned int counter)
 	while (s)
 	{
 		printf("%d\n", s->n);
-		h = h->next;
+		s = s->next;
 	}
 }
 
