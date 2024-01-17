@@ -61,12 +61,12 @@ void sub_(stack_t **h, unsigned int counter)
 }
 
 /**
- * f_mul - multiplies the top two elements of the stack.
+ * mul_ - multiplies the top two elements of the stack.
  * @h: stack h
  * @counter: line_number
  * Return: no return
 */
-void f_mul(stack_t **h, unsigned int counter)
+void mul_(stack_t **h, unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, aux;
@@ -93,12 +93,12 @@ void f_mul(stack_t **h, unsigned int counter)
 }
 
 /**
- * f_div - divides the top two elements of the stack.
+ * div_ - divides the top two elements of the stack.
  * @h: stack h
  * @counter: line_number
  * Return: no return
 */
-void f_div(stack_t **h, unsigned int counter)
+void div_(stack_t **h, unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, aux;
@@ -133,13 +133,13 @@ void f_div(stack_t **h, unsigned int counter)
 }
 
 /**
- * f_mod - computes the rest of the division of the second
+ * mod_ - computes the rest of the division of the second
  * top element of the stack by the top element of the stack
  * @h: stack h
  * @counter: line_number
  * Return: no return
 */
-void f_mod(stack_t **h, unsigned int counter)
+void mod_(stack_t **h, unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, aux;
