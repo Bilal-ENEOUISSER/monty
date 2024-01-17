@@ -41,7 +41,7 @@ void sub_(stack_t **h, unsigned int line_number)
  * @h: top of list
  * @line_number: line of command
  */
-void mul(stack_t **h, unsigned int line_number)
+void mul_(stack_t **h, unsigned int line_number)
 {
 	if (*h == NULL || (*h)->next == NULL)
 	{
