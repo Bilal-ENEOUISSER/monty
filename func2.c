@@ -20,7 +20,7 @@ void nop_(stack_t **h, unsigned int counter)
 */
 void pchar_(stack_t **h, unsigned int counter)
 {
-	stack_t *h;
+	stack_t *s;
 
 	s = *h;
 	if (!s)
@@ -51,7 +51,7 @@ void pchar_(stack_t **h, unsigned int counter)
 */
 void pstr_(stack_t **h, unsigned int counter)
 {
-	stack_t *h;
+	stack_t *s;
 	(void)counter;
 
 	s = *h;
