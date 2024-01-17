@@ -45,7 +45,7 @@ typedef struct instruction_s
 stack_t *global_stack;
 
 /* opcodes */
-void (*get_op_func(char *token1))(stack_t **stack, unsigned int line_number);
+void (*get_op(char *token1))(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
