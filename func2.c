@@ -1,34 +1,34 @@
 #include "monty.h"
 /**
-  *f_nop- nothing
-  *@head: stack head
+  *nop_- nothing
+  *@h: stack h
   *@counter: line_number
   *Return: no return
  */
-void f_nop(stack_t **head, unsigned int counter)
+void nop_(stack_t **h, unsigned int counter)
 {
 	(void) counter;
-	(void) head;
+	(void) h;
 }
 
 /**
- * f_pchar - prints the char at the top of the stack,
+ * pchar_ - prints the char at the top of the stack,
  * followed by a new line
- * @head: stack head
+ * @h: stack h
  * @counter: line_number
  * Return: no return
 */
-void f_pchar(stack_t **head, unsigned int counter)
+void pchar_(stack_t **h, unsigned int counter)
 {
 	stack_t *h;
 
-	h = *head;
+	h = *h;
 	if (!h)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", counter);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
 	if (h->n > 127 || h->n < 0)
@@ -36,25 +36,25 @@ void f_pchar(stack_t **head, unsigned int counter)
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", counter);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", h->n);
 }
 
 /**
- * f_pstr - prints the string starting at the top of the stack,
+ * pstr_ - prints the string starting at the top of the stack,
  * followed by a new
- * @head: stack head
+ * @h: stack h
  * @counter: line_number
  * Return: no return
 */
-void f_pstr(stack_t **head, unsigned int counter)
+void pstr_(stack_t **h, unsigned int counter)
 {
 	stack_t *h;
 	(void)counter;
 
-	h = *head;
+	h = *h;
 	while (h)
 	{
 		if (h->n > 127 || h->n <= 0)
@@ -68,43 +68,43 @@ void f_pstr(stack_t **head, unsigned int counter)
 }
 
 /**
-  *f_rotl- rotates the stack to the top
-  *@head: stack head
+  *rotl_- rotates the stack to the top
+  *@h: stack h
   *@counter: line_number
   *Return: no return
  */
-void f_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
+void rotl_(stack_t **h,  __attribute__((unused)) unsigned int counter)
 {
-	stack_t *tmp = *head, *aux;
+	stack_t *tmp = *h, *aux;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (*h == NULL || (*h)->next == NULL)
 	{
 		return;
 	}
-	aux = (*head)->next;
+	aux = (*h)->next;
 	aux->prev = NULL;
 	while (tmp->next != NULL)
 	{
 		tmp = tmp->next;
 	}
-	tmp->next = *head;
-	(*head)->next = NULL;
-	(*head)->prev = tmp;
-	(*head) = aux;
+	tmp->next = *h;
+	(*h)->next = NULL;
+	(*h)->prev = tmp;
+	(*h) = aux;
 }
 
 /**
-  *f_rotr- rotates the stack to the bottom
-  *@head: stack head
+  *rotr_- rotates the stack to the bottom
+  *@h: stack h
   *@counter: line_number
   *Return: no return
  */
-void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
+void rotr_(stack_t **h, __attribute__((unused)) unsigned int counter)
 {
 	stack_t *copy;
 
-	copy = *head;
-	if (*head == NULL || (*head)->next == NULL)
+	copy = *h;
+	if (*h == NULL || (*h)->next == NULL)
 	{
 		return;
 	}
@@ -112,9 +112,9 @@ void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
 	{
 		copy = copy->next;
 	}
-	copy->next = *head;
+	copy->next = *h;
 	copy->prev->next = NULL;
 	copy->prev = NULL;
-	(*head)->prev = copy;
-	(*head) = copy;
+	(*h)->prev = copy;
+	(*h) = copy;
 }
