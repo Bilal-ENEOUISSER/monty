@@ -8,19 +8,19 @@
 void addnode_(stack_t **h, int n)
 {
 
-	stack_t *new_node, *aux;
+	stack_t *n_node, *aux;
 
 	aux = *h;
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
+	n_node = malloc(sizeof(stack_t));
+	if (n_node == NULL)
 	{ printf("Error\n");
 		exit(0); }
 	if (aux)
-		aux->prev = new_node;
-	new_node->n = n;
-	new_node->next = *h;
-	new_node->prev = NULL;
-	*h = new_node;
+		aux->prev = n_node;
+	n_node->n = n;
+	n_node->next = *h;
+	n_node->prev = NULL;
+	*h = n_node;
 }
 
 
@@ -120,16 +120,16 @@ void f_queue_(stack_t **h, unsigned int counter)
 */
 void addqueue_(stack_t **h, int n)
 {
-	stack_t *new_node, *aux;
+	stack_t *n_node, *aux;
 
 	aux = *h;
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
+	n_node = malloc(sizeof(stack_t));
+	if (n_node == NULL)
 	{
 		printf("Error\n");
 	}
-	new_node->n = n;
-	new_node->next = NULL;
+	n_node->n = n;
+	n_node->next = NULL;
 	if (aux)
 	{
 		while (aux->next)
@@ -137,13 +137,13 @@ void addqueue_(stack_t **h, int n)
 	}
 	if (!aux)
 	{
-		*h = new_node;
-		new_node->prev = NULL;
+		*h = n_node;
+		n_node->prev = NULL;
 	}
 	else
 	{
-		aux->next = new_node;
-		new_node->prev = aux;
+		aux->next = n_node;
+		n_node->prev = aux;
 	}
 }
 
