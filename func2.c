@@ -8,7 +8,7 @@
 void nop_(stack_t **h, unsigned int counter)
 {
 	(void) counter;
-	(void) h;
+	(void) s;
 }
 
 /**
@@ -22,8 +22,8 @@ void pchar_(stack_t **h, unsigned int counter)
 {
 	stack_t *h;
 
-	h = *h;
-	if (!h)
+	s = *h;
+	if (!s)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", counter);
 		fclose(bus.file);
@@ -31,7 +31,7 @@ void pchar_(stack_t **h, unsigned int counter)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	if (h->n > 127 || h->n < 0)
+	if (s->n > 127 || s->n < 0)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", counter);
 		fclose(bus.file);
@@ -39,7 +39,7 @@ void pchar_(stack_t **h, unsigned int counter)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	printf("%c\n", h->n);
+	printf("%c\n", s->n);
 }
 
 /**
@@ -54,15 +54,15 @@ void pstr_(stack_t **h, unsigned int counter)
 	stack_t *h;
 	(void)counter;
 
-	h = *h;
-	while (h)
+	s = *h;
+	while (s)
 	{
-		if (h->n > 127 || h->n <= 0)
+		if (s->n > 127 || s->n <= 0)
 		{
 			break;
 		}
-		printf("%c", h->n);
-		h = h->next;
+		printf("%c", s->n);
+		s = s->next;
 	}
 	printf("\n");
 }
