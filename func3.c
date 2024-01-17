@@ -105,7 +105,7 @@ void free_stack_(stack_t *h)
  * @counter: line_number
  * Return: no return
 */
-void f_queue_(stack_t **h, unsigned int counter)
+void queue_(stack_t **h, unsigned int counter)
 {
 	(void)h;
 	(void)counter;
