@@ -99,12 +99,6 @@ void free_stack(stack_t *h)
 
 
 
-/**
- * queue_ - prints the top
- * @h: stack h
- * @counter: line_number
- * Return: no return
-*/
 
 
 /**
