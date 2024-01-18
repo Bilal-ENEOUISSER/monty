@@ -47,10 +47,6 @@ int execute_(char *content, stack_t **stack, unsigned int counter, FILE *file)
 				{"mod", mod_},
 				{"pchar", pchar_},
 				{"pstr", pstr_},
-				{"rotl", rotl_},
-				{"rotr", rotr_},
-				{"queue", queue_},
-				{"stack", stack_},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
