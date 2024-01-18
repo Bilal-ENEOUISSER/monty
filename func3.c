@@ -105,12 +105,7 @@ void free_stack(stack_t *h)
  * @counter: line_number
  * Return: no return
 */
-void queue_(stack_t **h, unsigned int counter)
-{
-	(void)h;
-	(void)counter;
-	bus.lifi = 1;
-}
+
 
 /**
  * addqueue_ - add node to the tail stack
