@@ -69,12 +69,8 @@ void mul_(stack_t **h, unsigned int counter);
 void mod_(stack_t **h, unsigned int counter);
 void pchar_(stack_t **h, unsigned int counter);
 void pstr_(stack_t **h, unsigned int counter);
-void rotl_(stack_t **h, unsigned int counter);
-void rotr_(stack_t **h, __attribute__((unused)) unsigned int counter);
 void addnode_(stack_t **h, int n);
 void addqueue_(stack_t **h, int n);
-void queue_(stack_t **h, unsigned int counter);
-void stack_(stack_t **h, unsigned int counter);
 
 
 
